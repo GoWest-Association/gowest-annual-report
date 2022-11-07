@@ -1,0 +1,323 @@
+
+
+// set colors
+$green: #00AE80;
+$navy: #1E3241;
+$blue: #529BA6;
+$kraken: $blue;
+$blue-whale: #2378D5;
+$sky: #92B4BC;
+$orange: #DD481F;
+$fulvous: #E87D00;
+$grey: #c5c5cf;
+$grey-light: rgba( $grey, .2 );
+$grey-dark: #9d9dac;
+
+
+// breakpoints
+$bp-s: 600px;
+$bp-m: 768px;
+$bp-l: 1024px;
+$bp-xl: 1150px;
+$bp-xxl: 1300px;
+
+
+@import "reset", "mixins", "fonts", "base";
+
+
+// vertically align middle divs structure
+@mixin flex-content-middle {
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	.inner {
+		flex-basis: 100%;
+	}
+}
+
+
+// background-container
+.container {
+	background: white;
+	padding-bottom: 40px;
+
+	@include respond-to( 1220px ) {
+		padding-bottom: 20px;
+	}
+}
+
+
+// general arrow styles for all sections
+.arrow-container {
+	transition: all 1.5s ease-out;
+	width: 40px;
+	margin-left: -20px;
+
+	@include respond-to( $bp-s ) { width: 60px; margin-left: -30px; }
+	@include respond-to( $bp-m ) { width: 80px; margin-left: -40px; }
+	@include respond-to( $bp-xl ) { width: 100px; margin-left: -50px; }
+	@include respond-to( $bp-xxl ) { width: 120px; margin-left: -60px; }
+
+	.arrow .arrow-object {
+		fill: $orange;
+	}
+}
+
+
+.icon-columns {
+	@include respond-to( $bp-s - 150px ) {
+		display: flex;
+		margin-left: 2%;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+
+	@include respond-to( $bp-xl ) {
+		margin-left: 3%;
+	}
+
+	.icon-column {
+		padding: 20px 0;
+
+		@include respond-to( $bp-s - 150px ) {
+			flex: 1;
+			margin-right: 2%;
+			flex-basis: 48%;
+		}
+
+		@include respond-to( $bp-m ) {
+			flex-basis: 31.3333%;
+		}
+
+		@include respond-to( $bp-l ) {
+			flex-basis: 18%;
+		}
+
+		@include respond-to( $bp-xl ) {
+			flex-basis: 17%;
+			margin-right: 3%;
+		}
+
+		.icon-column-icon {
+			padding: 0 0 20px 0;
+
+			svg {
+				max-width: 150px;
+			}
+		}
+
+		h3 {
+			@include font-bold;
+			font-size: 1.2em;
+			padding: 0;
+		}
+
+		p {
+			padding: 0;
+		}
+	}
+}
+
+
+
+// header styles
+header {
+	overflow: hidden;
+	position: relative;
+	background: $navy url(../img/bg-waves-green.png) center center;
+	background-size: cover;
+	text-align: center;
+	height: 100vh;
+
+	.logo {
+		.cls-1 { fill: #00ac80; }
+		.cls-2 { fill: #fff; }
+		.cls-3 { fill: #7a848d; }
+	}
+
+	// top border on header
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 30px;
+		background-color: $green;
+	}
+
+	.content {
+		height: 80%;
+		@include flex-content-middle;
+		padding: 25px;
+
+		.logo {
+			max-width: 500px;
+		}
+
+		h1 {
+			color: white;
+			text-transform: uppercase;
+			padding-top: 0;
+
+			@include respond-to( $bp-m ) {
+				font-size: 4.5em;
+			}
+
+			@include respond-to( $bp-l ) {
+				font-size: 6em;
+			}
+		}
+
+		h2 {
+			@include font-bold;
+			color: $green;
+			text-transform: uppercase;
+			padding-top: 50px;
+
+			@include respond-to( $bp-m ) {
+				padding-top: 80px;
+			}
+
+			@include respond-to( $bp-l ) {
+				font-size: 3.25em;
+			}
+		}
+	}
+
+	.arrow-container {
+		position: absolute;
+		left: 50%;
+		bottom: -10%;
+		opacity: 0;
+
+		&.visible {
+			bottom: 25%;
+			opacity: 1;
+
+			@include respond-to( $bp-m ) {
+				bottom: 10%;
+			}
+		}
+
+		.arrow .arrow-object {
+			fill: $orange;
+		}
+	}
+
+	.header-links {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+
+		@include respond-to( $bp-m ) {
+			display: flex;
+		}
+
+		a {
+			@include font-bold;
+			text-transform: uppercase;
+			font-size: 1.4em;
+			display: block;
+			padding: 10px;
+			text-align: center;
+			color: white;
+
+			&.advocacy { background: $green; }
+			&.cooperative { background: $blue; }
+			&.community { background: $fulvous; }
+
+			@include respond-to( $bp-m ) {
+				flex: 1;
+				padding: 15px 10px 10px 10px;
+			}
+		}
+	}
+}
+
+
+section {
+	position: relative;
+	min-height: 100vh;
+	padding: 20px;
+	text-align: center;
+	overflow: hidden;
+
+	.section-inner {
+		max-width: 1440px;
+		margin: 0 auto;
+	}
+
+	.section-header {
+		padding: 20px;
+
+		@include respond-to( $bp-m ) {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: center;
+			justify-content: center;
+
+			div {
+				flex: 1;
+				padding: 40px;
+			}
+		}
+
+		.icon {
+			@include respond-to( $bp-m ) {
+				text-align: right;
+			}
+		}
+
+		h2 {
+			@include font-bold;
+			text-transform: uppercase;
+			
+			@include respond-to( $bp-m ) {
+				text-align: left;
+			}
+		}
+	}
+
+	.arrow-container {
+		position: absolute;
+		left: 50%;
+		bottom: -10%;
+		opacity: 0;
+
+		&.visible {
+			bottom: 12%;
+			opacity: 1;
+
+			@include respond-to( $bp-m ) {
+				bottom: 7%;
+			}
+		}
+
+		.arrow .arrow-object {
+			fill: $blue;
+		}
+	}
+}
+
+
+section.advocacy-federal {
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 30px;
+		background-color: $blue;
+	}
+
+	.icon-capitol {
+		max-width: 140px;
+	}
+}
+
