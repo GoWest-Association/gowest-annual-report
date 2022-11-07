@@ -1,5 +1,5 @@
-# Lincoln Park Loan Calculator
+# GoWest Annual Report
 
-A small calculator microsite created for Lincoln Park Community Credit Union. Developing in the open and deploying to Github Pages. Report bugs if you like but this project is mainly here to expose our development processes.
+A microsite for the annual impact report for GoWest Association
 
 The art, logo, and names used belong to their respective owners and shouldn't be used without permission. That said, help yourself to the code or suggest improvements!
