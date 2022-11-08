@@ -104,7 +104,12 @@ $(document).ready(function(){
 
 		// solutions animations
 		if ( scroll_position >= ( $( 'section.foundation' ).offset().top - 100 ) ) {
-			// $( 'section.foundation .arrow-container' ).addClass( 'visible' );
+			wait_and_do( 200, 'section.foundation .articles .article:nth-child(1)' );
+			wait_and_do( 400, 'section.foundation .articles .article:nth-child(2)' );
+			wait_and_do( 600, 'section.foundation .articles .article:nth-child(3)' );
+			wait_and_do( 800, 'section.foundation .articles .article:nth-child(4)' );
+			wait_and_do( 1000, 'section.foundation .articles .article:nth-child(5)' );
+			wait_and_do( 1200, 'section.foundation .articles .article:nth-child(6)' );
 		}
 
 	});

@@ -501,13 +501,14 @@ section.advocacy-grassroots {
 
 		.section-content {
 			max-width: 450px;
+
 			transition: all 500ms ease-in-out;
 			opacity: 0;
-			margin-left: 200px;
+			@include respond-to( $bp-l ) { margin-left: 200px; }
 
 			&.visible {
 				opacity: 1;
-				margin-left: 0;
+				@include respond-to( $bp-l ) { margin-left: 0; }
 			}
 
 			p {
@@ -611,13 +612,14 @@ section.cooperative {
 
 		.section-content {
 			max-width: 450px;
+
 			transition: all 500ms ease-in-out;
 			opacity: 0;
-			margin-left: 200px;
+			@include respond-to( $bp-l ) { margin-left: 200px; }
 
 			&.visible {
 				opacity: 1;
-				margin-left: 0;
+				@include respond-to( $bp-l ) { margin-left: 0; }
 			}
 
 			p {
@@ -945,11 +947,11 @@ section.community {
 
 			transition: all 500ms ease-in-out;
 			opacity: 0;
-			margin-left: 200px;
+			@include respond-to( $bp-l ) { margin-left: 200px; }
 
 			&.visible {
 				opacity: 1;
-				margin-left: 0;
+				@include respond-to( $bp-l ) { margin-left: 0; }
 			}
 
 			p {
@@ -1062,7 +1064,7 @@ section.foundation {
 	.articles {
 		@include respond-to( $bp-s ) {
 			display: flex;
-			margin-right: -2%;
+			margin-right: -4%;
 			flex-wrap: wrap;
 			text-align: center;
 		}
@@ -1071,15 +1073,26 @@ section.foundation {
 			margin-bottom: 20px;
 			text-align: left;
 
+			transition: opacity 500ms ease-in-out;
+			opacity: 0;
+
+			&.visible {
+				opacity: 1;
+			}
+
 			@include respond-to( $bp-s ) {
 				flex: 1;
-				margin-right: 2%;
-				margin-bottom: 2%;
-				flex-basis: 48%;
+				margin-right: 4%;
+				margin-bottom: 4%;
+				flex-basis: 46%;
 			}
 
 			@include respond-to( $bp-l ) {
-				flex-basis: 31.3333%;
+				flex-basis: 29.3333%;
+			}
+
+			img {
+				border: 1px solid $navy;
 			}
 
 			h3 {
