@@ -51,6 +51,21 @@ $(document).ready(function(){
 			$( 'section.member .arrow-container' ).addClass( 'visible' );
 		}
 
+		// solutions animations
+		if ( scroll_position >= ( $( 'section.solutions' ).offset().top - 10 ) ) {
+			$( 'section.solutions .arrow-container' ).addClass( 'visible' );
+		}
+
+		// community animations
+		if ( scroll_position >= ( $( 'section.community' ).offset().top - 10 ) ) {
+			$( 'section.community .arrow-container' ).addClass( 'visible' );
+		}
+
+		// solutions animations
+		if ( scroll_position >= ( $( 'section.foundation' ).offset().top - 10 ) ) {
+			// $( 'section.foundation .arrow-container' ).addClass( 'visible' );
+		}
+
 	});
 
 });
