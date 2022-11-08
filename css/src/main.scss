@@ -9,6 +9,14 @@ $blue-whale: #2378D5;
 $sky: #92B4BC;
 $orange: #DD481F;
 $fulvous: #E87D00;
+
+$arizona: #FBB316;
+$colorado: #7A3693;
+$idaho: #EE3E37;
+$oregon: #41C2D4;
+$washington: #3A76BA;
+$wyoming: #8C4C3D;
+
 $grey: #c5c5cf;
 $grey-light: rgba( $grey, .2 );
 $grey-dark: #9d9dac;
@@ -42,10 +50,13 @@ $bp-xxl: 1300px;
 // background-container
 .container {
 	background: white;
-	padding-bottom: 40px;
+	max-width: 1920px;
+	margin: 0 auto;
 
-	@include respond-to( 1220px ) {
-		padding-bottom: 20px;
+	@include respond-to( 1922px ) {
+		border-left: 1px solid $grey-dark;
+		border-right: 1px solid $grey-dark;
+		box-shadow: 0 0 50px $grey;
 	}
 }
 
@@ -70,13 +81,13 @@ $bp-xxl: 1300px;
 .icon-columns {
 	@include respond-to( $bp-s - 150px ) {
 		display: flex;
-		margin-left: 2%;
+		margin-right: -2%;
 		flex-wrap: wrap;
 		text-align: center;
 	}
 
 	@include respond-to( $bp-xl ) {
-		margin-left: 3%;
+		margin-right: -3%;
 	}
 
 	.icon-column {
@@ -111,7 +122,7 @@ $bp-xxl: 1300px;
 
 		h3 {
 			@include font-bold;
-			font-size: 1.2em;
+			font-size: 1.1em;
 			padding: 0;
 		}
 
@@ -122,12 +133,11 @@ $bp-xxl: 1300px;
 }
 
 
-
 // header styles
 header {
 	overflow: hidden;
 	position: relative;
-	background: $navy url(../img/bg-waves-green.png) center center;
+	background: $navy url(../img/bg-waves-green.png) center center no-repeat;
 	background-size: cover;
 	text-align: center;
 	height: 100vh;
@@ -221,7 +231,7 @@ header {
 		a {
 			@include font-bold;
 			text-transform: uppercase;
-			font-size: 1.4em;
+			font-size: 1.2em;
 			display: block;
 			padding: 10px;
 			text-align: center;
@@ -233,6 +243,7 @@ header {
 
 			@include respond-to( $bp-m ) {
 				flex: 1;
+				font-size: 1.4em;
 				padding: 15px 10px 10px 10px;
 			}
 		}
@@ -240,34 +251,53 @@ header {
 }
 
 
+// general section styles
 section {
 	position: relative;
-	min-height: 100vh;
-	padding: 20px;
 	text-align: center;
 	overflow: hidden;
 
+	padding: 50px 20px 120px 20px;
+	@include respond-to( $bp-m ) {
+		padding: 60px 40px 200px 40px;
+	}
+
 	.section-inner {
-		max-width: 1440px;
+		max-width: 1500px;
 		margin: 0 auto;
 	}
 
 	.section-header {
-		padding: 20px;
+		margin-bottom: 20px;
+
+		&.no-icon {
+			margin: 25px 0;
+		}
 
 		@include respond-to( $bp-m ) {
 			display: flex;
 			flex-direction: row-reverse;
 			align-items: center;
 			justify-content: center;
+			margin-bottom: 50px;
+
+			&.no-icon {
+				margin: 40px 0;
+			}
 
 			div {
 				flex: 1;
-				padding: 40px;
+				flex-basis: 75%;
 			}
 		}
 
 		.icon {
+			flex-basis: 25%;
+
+			img {
+				max-width: 140px;
+			}
+
 			@include respond-to( $bp-m ) {
 				text-align: right;
 			}
@@ -286,15 +316,15 @@ section {
 	.arrow-container {
 		position: absolute;
 		left: 50%;
-		bottom: -10%;
+		bottom: -150px;
 		opacity: 0;
 
 		&.visible {
-			bottom: 12%;
+			bottom: 50px;
 			opacity: 1;
 
 			@include respond-to( $bp-m ) {
-				bottom: 7%;
+				bottom: 75px;
 			}
 		}
 
@@ -305,6 +335,7 @@ section {
 }
 
 
+// federal advocacy
 section.advocacy-federal {
 	&:before {
 		content: '';
@@ -315,9 +346,446 @@ section.advocacy-federal {
 		height: 30px;
 		background-color: $blue;
 	}
+}
 
-	.icon-capitol {
-		max-width: 140px;
+
+// state advocacy
+section.advocacy-state {
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 30px;
+		background-color: $navy;
+	}
+
+	.state-boxes {
+		@include respond-to( $bp-s ) {
+			display: flex;
+			margin-right: -3%;
+			flex-wrap: wrap;
+		}
+
+		.state-box {
+			position: relative;
+			padding: 50px 30px 30px;
+			margin-bottom: 3%;
+			border: 3px solid $navy;
+
+			@include respond-to( $bp-s ) {
+				flex: 1;
+				margin-right: 3%;
+				flex-basis: 47%;
+			}
+
+			@include respond-to( $bp-m ) {
+				flex-basis: 30.3333%;
+			}
+
+			.state-box-icon {
+				padding: 0 0 20px 0;
+				height: 150px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 20px 0;
+
+				img {
+					flex: 1;
+					max-width: 150px;
+					max-height: 150px;
+				}
+			}
+
+			h3 {
+				@include font-bold;
+				font-size: 1.4em;
+				padding: 20px 0;
+			}
+
+			p {
+				text-align: center;
+				padding: 0;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 30px;
+				background-color: $orange;
+			}
+
+			&.az {
+				background: rgba( $arizona, .075 );
+				&:before { background-color: $arizona; }
+			}
+
+			&.co {
+				background: rgba( $colorado, .075 );
+				&:before { background-color: $colorado; }
+			}
+
+			&.id {
+				background: rgba( $idaho, .075 );
+				&:before { background-color: $idaho; }
+			}
+
+			&.or {
+				background: rgba( $oregon, .075 );
+				&:before { background-color: $oregon; }
+			}
+
+			&.wa {
+				background: rgba( $washington, .075 );
+				&:before { background-color: $washington; }
+			}
+
+			&.wy {
+				background: rgba( $wyoming, .075 );
+				&:before { background-color: $wyoming; }
+			}
+		}
+	}
+
+	.arrow-container {
+		.arrow .arrow-object {
+			fill: $navy;
+		}
 	}
 }
 
+
+// grassroots advocacy
+section.advocacy-grassroots {
+	background: url(../img/bg-advocacy-grassroots.jpg) left center no-repeat;
+	background-size: cover;
+	padding: 20px 20px 200px 20px;
+
+	@include respond-to( $bp-l ) {
+		background: url(../img/bg-advocacy-grassroots.jpg) center center center no-repeat;
+		background-size: cover;
+		padding: 20px 20px 300px 20px;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 30px;
+		background-color: $green;
+	}
+
+	.section-inner {
+		max-width: 100%;
+		margin: 0;
+		padding: 20px;
+
+		.section-content {
+			max-width: 450px;
+
+			p {
+				text-align: left;
+			}	
+		}
+
+		@include respond-to( $bp-s ) {
+			max-width: 450px;
+			padding: 40px;
+		}
+
+		@include respond-to( $bp-l ) {
+			max-width: 1500px;
+			margin: 0 auto;
+		}
+	}
+
+	.arrow-container {
+		position: absolute;
+		left: 50%;
+		bottom: -150px;
+		opacity: 0;
+
+		@include respond-to( $bp-s ) {
+			left: 150px;
+		}
+
+		@include respond-to( $bp-xxl ) {
+			left: 50%;
+			margin-left: -600px;
+		}
+
+		&.visible {
+			bottom: 50px;
+			opacity: 1;
+
+			@include respond-to( $bp-s ) {
+				left: 150px;
+				bottom: 75px;
+			}
+
+			@include respond-to( $bp-xxl ) {
+				left: 50%;
+				margin-left: -600px;
+			}
+		}
+
+		.arrow .arrow-object {
+			fill: $green;
+		}
+	}
+}
+
+
+// regulatory advocacy
+section.advocacy-regulatory {
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 30px;
+		background-color: $orange;
+	}
+
+	.arrow-container {
+		.arrow .arrow-object {
+			fill: $orange;
+		}
+	}
+}
+
+
+// cooperative value
+section.cooperative {
+	background: $navy url(../img/bg-blue-chevron.png) right center no-repeat;
+	background-size: cover;
+	padding: 20px 20px 200px 20px;
+	color: white;
+
+	@include respond-to( $bp-l ) {
+		background-size: contain;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 30px;
+		background-color: $blue;
+	}
+
+	.section-inner {
+		max-width: 100%;
+		margin: 0;
+		padding: 20px;
+
+		.section-content {
+			max-width: 450px;
+
+			p {
+				text-align: left;
+			}	
+		}
+
+		@include respond-to( $bp-s ) {
+			max-width: 450px;
+			padding: 40px;
+		}
+
+		@include respond-to( $bp-l ) {
+			max-width: 1500px;
+			margin: 0 auto;
+		}
+	}
+
+	.arrow-container {
+		position: absolute;
+		left: 50%;
+		bottom: -150px;
+		opacity: 0;
+
+		@include respond-to( $bp-s ) {
+			left: 150px;
+		}
+		
+		@include respond-to( $bp-xxl ) {
+			left: 50%;
+			margin-left: -600px;
+		}
+
+		&.visible {
+			bottom: 50px;
+			opacity: 1;
+
+			@include respond-to( $bp-s ) {
+				left: 150px;
+				bottom: 75px;
+			}
+
+			@include respond-to( $bp-xxl ) {
+				left: 50%;
+				margin-left: -600px;
+			}
+		}
+
+		.arrow .arrow-object {
+			fill: $blue;
+		}
+	}
+}
+
+
+// member-engagmeent value
+section.member {
+	background: white url(../img/bg-blue-chevron.png) right center no-repeat;
+	background-size: cover;
+
+	@include respond-to( $bp-l ) {
+		background-size: contain;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 30px;
+		background-color: $blue;
+	}
+
+	.columns {
+		@include respond-to( $bp-s - 150px ) {
+			display: flex;
+			margin-right: -2%;
+			flex-wrap: wrap;
+			text-align: center;
+		}
+
+		.column {
+			border: 3px solid $navy;
+			padding: 0 0 20px 0;
+
+			@include respond-to( $bp-s - 150px ) {
+				flex: 1;
+				margin-right: 2%;
+				flex-basis: 48.5%;
+			}
+
+			@include respond-to( $bp-m ) {
+				flex-basis: 31.3333%;
+			}
+
+			@include respond-to( $bp-l ) {
+				flex-basis: 18%;
+			}
+
+			@include respond-to( $bp-xl ) {
+				flex-basis: 17%;
+			}
+
+			h3 {
+				@include font-bold;
+				font-size: 1.1em;
+				padding: 20px;
+				background: $navy;
+				color: white;
+			}
+
+			.column-content {
+				background: rgba( white, .3 );
+				padding: 10px 20px;
+				font-size: .9em;
+				line-height: 1.3em;
+				text-align: left;
+			}
+		}
+	}
+
+	.arrow-container {
+		.arrow .arrow-object {
+			fill: $blue;
+		}
+	}
+}
+
+
+// footer styles
+footer {
+	position: relative;
+	background: $navy url(../img/bg-waves-green.png) center center;
+	background-size: cover;
+	color: white;
+	padding: 50px 20px 30px;
+	line-height: 1.5em;
+
+	@include respond-to( $bp-s ) {
+		font-size: 1.2em;
+	}
+
+	@include respond-to( 1024px ) {
+		padding: 90px 40px 60px 40px;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 30px;
+		background-color: $green;
+	}
+
+	.footer-inner {
+		max-width: 1500px;
+		margin: 0 auto;
+	}
+
+	.phone {
+		@include font-bold;
+		padding-bottom: 20px;
+
+		a {
+			color: white;
+		}
+	}
+
+	.columns {
+		@include respond-to( $bp-m ) {
+			display: flex;
+		}
+
+		.column {
+			@include respond-to( $bp-m ) {
+				flex: 1;
+			}
+
+			.social {
+				padding: 10px 0;
+				max-width: 350px;
+				margin-right: -2%;
+
+				img {
+					max-width: 23%;
+					margin-right: 2%;
+				}
+			}
+		}
+	}
+
+	.small {
+		padding-top: 20px;
+		font-size: .8em;
+	}
+}
