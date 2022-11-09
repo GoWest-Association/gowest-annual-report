@@ -9,6 +9,7 @@ $blue-whale: #2378D5;
 $sky: #92B4BC;
 $orange: #DD481F;
 $fulvous: #E87D00;
+$off-blue: #8fd3d2;
 
 $arizona: #FBB316;
 $colorado: #7A3693;
@@ -364,7 +365,7 @@ section.advocacy-state {
 		left: 0;
 		width: 100%;
 		height: 30px;
-		background-color: $blue;
+		background-color: $off-blue;
 	}
 
 	.state-boxes {
@@ -466,7 +467,7 @@ section.advocacy-state {
 
 	.arrow-container {
 		.arrow .arrow-object {
-			fill: $blue;
+			fill: $off-blue;
 		}
 	}
 }
