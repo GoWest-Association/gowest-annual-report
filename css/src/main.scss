@@ -853,6 +853,14 @@ section.solutions {
 					flex: 1;
 					flex-basis: 35%;
 					padding: 0;
+					font-size: 2.8em;
+					text-align: center;
+
+					span {
+						font-size: 20px;
+						line-height: 25px;
+						display: block;
+					}
 				}
 
 				p {
@@ -1177,6 +1185,16 @@ section.foundation {
 		.arrow .arrow-object {
 			fill: $blue;
 		}
+	}
+
+	.top {
+		@include font-bold;
+		font-size: 1.4em;
+		text-transform: uppercase;
+		color: $navy;
+		position: absolute;
+		bottom: 50px;
+		left: 50px;
 	}
 }
 
