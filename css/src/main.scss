@@ -358,6 +358,8 @@ section.advocacy-federal {
 
 // state advocacy
 section.advocacy-state {
+	text-align: left;
+
 	&:before {
 		content: '';
 		position: absolute;
@@ -377,7 +379,6 @@ section.advocacy-state {
 
 		.state-box {
 			position: relative;
-			padding: 50px 30px 30px;
 			margin-bottom: 3%;
 			border: 3px solid $navy;
 			transition: opacity 500ms ease-in-out;
@@ -398,28 +399,20 @@ section.advocacy-state {
 			}
 
 			.state-box-icon {
-				padding: 0 0 20px 0;
-				height: 150px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				margin: 20px 0 0;
+				
+			}
 
-				img {
-					flex: 1;
-					max-width: 150px;
-					max-height: 150px;
-				}
+			.state-box-inner {
+				padding: 20px 30px 30px;
 			}
 
 			h3 {
 				@include font-bold;
 				font-size: 1.4em;
-				padding: 20px 0;
+				padding: 0 0 20px 0;
 			}
 
 			p {
-				text-align: center;
 				padding: 0;
 			}
 
@@ -475,12 +468,12 @@ section.advocacy-state {
 
 // grassroots advocacy
 section.advocacy-grassroots {
-	background: url(../img/bg-advocacy-grassroots.jpg) left center no-repeat;
+	background: url(../img/bg-advocacy-grassroots.jpg?v=1) left center no-repeat;
 	background-size: cover;
 	padding: 20px 20px 200px 20px;
 
 	@include respond-to( $bp-l ) {
-		background: url(../img/bg-advocacy-grassroots.jpg) center center center no-repeat;
+		background: url(../img/bg-advocacy-grassroots.jpg?v=1) center center center no-repeat;
 		background-size: cover;
 		padding: 20px 20px 300px 20px;
 	}
@@ -513,6 +506,7 @@ section.advocacy-grassroots {
 			}
 
 			p {
+				text-shadow: 0 0 30px rgba( white, 1 );
 				text-align: left;
 			}	
 		}
@@ -835,22 +829,38 @@ section.solutions {
 				opacity: 1;
 			}
 
+			h3 {
+				@include font-bold;
+				font-size: 2em;
+				padding: 20px 10px 0;
+				color: $navy;
+			}
+
 			@include respond-to( $bp-s - 150px ) {
 				flex: 1;
-				margin-right: 2%;
+				align-items: center;
+				justify-content: center;
+  				margin-right: 2%;
 				margin-bottom: 2%;
 				flex-basis: 48%;
 			}
 
 			@include respond-to( $bp-l ) {
 				flex-basis: 31.3333%;
-			}
+				display: flex;
 
-			h3 {
-				@include font-bold;
-				font-size: 2em;
-				padding: 20px 10px 0;
-				color: $navy;
+				h3 {
+					flex: 1;
+					flex-basis: 35%;
+					padding: 0;
+				}
+
+				p {
+					flex: 1;
+					flex-basis: 62%;
+					margin-left: 3%;
+					text-align: left;
+				}
 			}
 		}
 	}
