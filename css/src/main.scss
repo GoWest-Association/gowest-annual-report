@@ -161,18 +161,55 @@ header {
 	}
 
 	.content {
-		height: 80%;
+		height: 70%;
 		@include flex-content-middle;
 		padding: 25px;
 
-		.logo {
-			max-width: 500px;
+		.logos {
+			text-align: center;
+
+			@include respond-to( $bp-l ) {
+				display: flex;
+				align-items: center;
+				vertical-align: middle;
+				max-width: $bp-l;
+				margin: 100px auto 0;
+			}
+
+			.col {
+				.logo {
+					max-width: 500px;
+				}
+
+				.logo-small {
+					max-width: 45%;
+					margin: 5px 2%;
+				}
+
+				@include respond-to( $bp-l ) {
+					flex: 1;
+
+					&:first-child {
+						flex-basis: 60%;
+					}
+
+					&:last-child {
+						flex-basis: 40%;
+					}
+				
+					.logo-small {
+						display: block;
+						margin: 20px auto;
+					}
+				}
+			}
 		}
 
 		h1 {
 			color: white;
 			text-transform: uppercase;
 			padding-top: 0;
+			font-size: 2.5em;
 
 			@include respond-to( $bp-m ) {
 				font-size: 4.5em;
@@ -188,6 +225,7 @@ header {
 			color: $green;
 			text-transform: uppercase;
 			padding-top: 50px;
+			font-size: 1.8em;
 
 			@include respond-to( $bp-m ) {
 				padding-top: 80px;
@@ -197,12 +235,29 @@ header {
 				font-size: 3.25em;
 			}
 		}
+
+		.quote {
+			color: rgba( white, .8 );
+			font-size: .75em;
+			line-height: 1.4em;
+			max-width: 500px;
+			margin: 0 auto;
+
+			@include respond-to( $bp-l ) {
+				font-size: 1em;
+			}
+
+			.by {
+				color: rgba( white, .5 );
+				font-style: italic;
+			}
+		}
 	}
 
 	.arrow-container {
 		position: absolute;
 		left: 50%;
-		bottom: -10%;
+		bottom: -5%;
 		opacity: 0;
 
 		&.visible {
@@ -210,7 +265,7 @@ header {
 			opacity: 1;
 
 			@include respond-to( $bp-m ) {
-				bottom: 10%;
+				bottom: 5%;
 			}
 		}
 
