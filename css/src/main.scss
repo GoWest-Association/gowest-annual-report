@@ -523,12 +523,12 @@ section.advocacy-state {
 
 // grassroots advocacy
 section.advocacy-grassroots {
-	background: url(../img/bg-advocacy-grassroots.jpg?v=1) left center no-repeat;
+	background: url(../img/bg-advocacy-grassroots.jpg?v=2) left center no-repeat;
 	background-size: cover;
 	padding: 20px 20px 200px 20px;
 
 	@include respond-to( $bp-l ) {
-		background: url(../img/bg-advocacy-grassroots.jpg?v=1) center center center no-repeat;
+		background: url(../img/bg-advocacy-grassroots.jpg?v=2) center center center no-repeat;
 		background-size: cover;
 		padding: 20px 20px 300px 20px;
 	}
