@@ -1155,7 +1155,7 @@ section.foundation {
 			}
 
 			@include respond-to( $bp-s ) {
-				flex: 1;
+				flex: 0 0 46%;
 				margin-right: 4%;
 				margin-bottom: 4%;
 				flex-basis: 46%;
