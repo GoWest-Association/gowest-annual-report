@@ -133,7 +133,7 @@ header {
     background: $navy url(../img/bg-waves-green.png) center center no-repeat;
     background-size: cover;
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
     // top border on header
     &:before {
         content: '';
@@ -146,7 +146,7 @@ header {
     }
     .content {
         @include flex-content-middle;
-        padding: 25px;
+        padding: 25px 25px 60px 25px;
         .logos {
             text-align: center;
             @include respond-to( $bp-l) {
