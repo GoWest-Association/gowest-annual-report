@@ -1410,6 +1410,11 @@ footer {
                     &:last-child {
                         margin-right: 0;
                     }
+                    opacity: 1;
+                    transition: 400ms opacity ease-in-out;
+                    &:hover {
+                        opacity: .7;
+                    }
                 }
                 img {
                     width: 100%;
