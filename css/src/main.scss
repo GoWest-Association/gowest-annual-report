@@ -231,6 +231,7 @@ header {
             border: 5px solid;
             opacity: 0;
             transition: all 400ms ease-in-out;
+            cursor: pointer;
             &.visible {
                 opacity: 1;
             }
