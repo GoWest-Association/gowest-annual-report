@@ -1403,9 +1403,16 @@ footer {
                 padding: 10px 0;
                 max-width: 350px;
                 margin-right: -2%;
+                display: flex;
+                a {
+                    flex: 1 1 21%;
+                    margin-right: 4%;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
                 img {
-                    max-width: 23%;
-                    margin-right: 2%;
+                    width: 100%;
                 }
             }
         }
