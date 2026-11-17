@@ -88,6 +88,16 @@ $(document).ready(function() {
         }
 
 
+        if (scroll_position >= ($('section.education-networking').offset().top - 100)) {
+            $('section.education-networking .arrow-container').addClass('visible');
+            $('.education-networking .section-content ul li').each(function(i) {
+                var li = $(this);
+                setTimeout(function() {
+                    li.addClass('visible');
+                }, 200 * i);
+            });
+        }
+
         // solutions animations
         if (scroll_position >= ($('section.solutions').offset().top - 100)) {
             $('section.solutions .arrow-container').addClass('visible');
