@@ -89,6 +89,8 @@ $(document).ready(function() {
 
         if (scroll_position >= ($('section.education-networking').offset().top - 150)) {
             $('section.education-networking .arrow-container').addClass('visible');
+            wait_and_do(200, '.education-networking .photo-border.top');
+            wait_and_do(1000, '.education-networking .photo-border.bottom');
             $('.education-networking .section-content ul li').each(function(i) {
                 var li = $(this);
                 setTimeout(function() {
