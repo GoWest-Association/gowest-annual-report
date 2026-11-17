@@ -810,6 +810,13 @@ section.compliance-guidance {
             }
         }
     }
+    .content-one, .content-two {
+        opacity: 0;
+        transition: 400ms opacity ease-in-out;
+        &.visible {
+            opacity: 1;
+        }
+    }
     &:before {
         content: '';
         position: absolute;

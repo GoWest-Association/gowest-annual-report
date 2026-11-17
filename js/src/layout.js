@@ -72,9 +72,11 @@ $(document).ready(function() {
 
         if (scroll_position >= ($('section.compliance-guidance').offset().top - 150)) {
             $('section.compliance-guidance .arrow-container').addClass('visible');
-            wait_and_do(200, '.compliance-guidance .stats .stat:first-child');
-            wait_and_do(400, '.compliance-guidance .stats .stat:nth-child(2)');
-            wait_and_do(600, '.compliance-guidance .stats .stat:nth-child(3)');
+            wait_and_do(200, '.compliance-guidance .content-one');
+            wait_and_do(400, '.compliance-guidance .stats .stat:first-child');
+            wait_and_do(600, '.compliance-guidance .stats .stat:nth-child(2)');
+            wait_and_do(800, '.compliance-guidance .content-two');
+            wait_and_do(1000, '.compliance-guidance .stats .stat:nth-child(3)');
         }
 
 
