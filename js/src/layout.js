@@ -64,12 +64,6 @@ $(document).ready(function() {
             wait_and_do(1000, '.advocacy-regulatory .icon-columns .icon-column:nth-child(5)');
         }
 
-        // cooperative values animations
-        if (scroll_position >= ($('section.cooperative').offset().top - 150)) {
-            $('section.cooperative .arrow-container').addClass('visible');
-            $('section.cooperative .section-content').addClass('visible');
-        }
-
         if (scroll_position >= ($('section.compliance-guidance').offset().top - 150)) {
             $('section.compliance-guidance .arrow-container').addClass('visible');
             wait_and_do(200, '.compliance-guidance .content-one');
@@ -79,7 +73,6 @@ $(document).ready(function() {
             wait_and_do(1000, '.compliance-guidance .stats .stat:nth-child(3)');
         }
 
-
         if (scroll_position >= ($('section.strategic-messaging').offset().top - 150)) {
             $('section.strategic-messaging .arrow-container').addClass('visible');
             wait_and_do(200, '.strategic-messaging .column-boxes .column-box:first-child');
@@ -87,7 +80,6 @@ $(document).ready(function() {
             wait_and_do(600, '.strategic-messaging .column-boxes .column-box:nth-child(3)');
             wait_and_do(800, '.strategic-messaging .column-boxes .column-box:nth-child(4)');
         }
-
 
         if (scroll_position >= ($('section.education-networking').offset().top - 150)) {
             $('section.education-networking .arrow-container').addClass('visible');
